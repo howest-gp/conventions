@@ -5,4 +5,4 @@ In de opleiding Graduaat Programmeren hanteren we een aantal naamgevingsconventi
  - Met voorafgemaakte afspraken kan er geargumenteerd worden omtrent de inhoud, en niet te syntax of vormgeving
  
 ## Overzicht:
- - [C# Codeerstandaarden en naamgevingsconventies](c%23%20conventions.md)
+ - [C# Codeerstandaarden en naamgevingsconventies](C%23%20conventions.md)
