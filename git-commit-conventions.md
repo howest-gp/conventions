@@ -75,10 +75,10 @@ Bijvoorbeeld:
 - If applied, this commit will <span style="color:green">***merge pull request #123 from user/branch***</span>
 
 Zie hoe dit niet werkt in de niet-gebiedende wijze:
-- If applied, this commit will <span style="color:red">***fixed bug with Y***</span>
-- If applied, this commit will <span style="color:red">***changing behavior of X***</span>
-- If applied, this commit will <span style="color:red">***more fixes for broken stuff***</span>
-- If applied, this commit will <span style="color:red">***sweet new API methods***</span>
+- If applied, this commit will <span style="color:red">~~***fixed bug with Y***~~</span>
+- If applied, this commit will <span style="color:red">~~***changing behavior of X***~~</span>
+- If applied, this commit will <span style="color:red">~~***more fixes for broken stuff***~~</span>
+- If applied, this commit will <span style="color:red">~~***sweet new API methods***~~</span>
 
 Deze gebiedende wijs gebruiken we enkel in de titel, niet in de body.
 ## 7	WRAP DE BODY OP 72 KARAKTERS
