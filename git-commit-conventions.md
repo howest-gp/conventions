@@ -30,7 +30,7 @@ Hierdoor zal VS Code (of een andere ingestelde editor openen) waarin je uw commi
 - Git commit met titel en body: `$ git commit -m "Titel" -m "Body"`
 
 We kunnen dit ook doen via de Git tools die ingebouwd zijn in Visual Code en/of Visual Studio.
-![Git] (images/git-01.png)
+![Git](/images/git-01.png)
  
 ## 3	BEPERK DE TITEL TOT 50 KARAKTERS
 Dit is geen harde limiet, maar eerder een vuistregel. De harde limiet bedraagt 72 karakters.
@@ -40,10 +40,10 @@ Maar indien je te hard moet nadenken over een goeie titel heb je misschien tevee
 
 Ook de UI van GitHub volgt deze afspraken en geeft je een waarschuwing wanneer je over de 50 karakters gaat:  
 
-![Git] (images/git-02.png)
+![Git](/images/git-02.png)
 
 Als je titel langer is dan 72 karakters zal deze afgekapt worden in de UI. Probeer dus te mikken op 50 karakters voor je titel: 
-![Git] (images/git-03.png)
+![Git](/images/git-03.png)
 
 Wanneer we gebruik maken van de commando’s `git log`,  `git log --oneline` of `git shortlog` geeft ons dit een mooi overzicht.
 ## 4	BEGIN DE TITEL MET EEN HOOFDLETTER
