@@ -6,3 +6,5 @@ In de opleiding Graduaat Programmeren hanteren we een aantal naamgevingsconventi
  
 ## Overzicht:
  - [C# Codeerstandaarden en naamgevingsconventies](C%23%20conventions.md)
+ 
+ - [WPF Control naamgevingconventies](WPF-conventions.md)
