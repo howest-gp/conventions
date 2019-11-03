@@ -6,7 +6,7 @@
 | ComboBox                | **cmb** | 
 | Grid                    | **grd** | 
 | Label                   | **lbl** |
-| ListBox                 | **lbl** |
+| ListBox                 | **lst** |
 | ProgressBar             | **pgb** |
 | RadioButton             | **rdb** |
 | Slider                  | **sld** |
