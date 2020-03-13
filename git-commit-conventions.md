@@ -68,17 +68,17 @@ Om verwarring te vermijden kan je volgende regel toepassen:
 - If applied, this commit will *plaats de titel hier*
 
 Bijvoorbeeld:
-- If applied, this commit will <span style="color:green">***refactor subsystem X for readability***</span>
-- If applied, this commit will <span style="color:green">***update getting started documentation***</span>
-- If applied, this commit will <span style="color:green">***remove deprecated methods***</span>
-- If applied, this commit will <span style="color:green">***release version 1.0.0***</span>
-- If applied, this commit will <span style="color:green">***merge pull request #123 from user/branch***</span>
+- If applied, this commit will <span style="color:green">***Refactor subsystem X for readability***</span>
+- If applied, this commit will <span style="color:green">***Update getting started documentation***</span>
+- If applied, this commit will <span style="color:green">***Remove deprecated methods***</span>
+- If applied, this commit will <span style="color:green">***Release version 1.0.0***</span>
+- If applied, this commit will <span style="color:green">***Merge pull request #123 from user/branch***</span>
 
 Zie hoe dit niet werkt in de niet-gebiedende wijze:
-- If applied, this commit will <span style="color:red">~~***fixed bug with Y***~~</span>
-- If applied, this commit will <span style="color:red">~~***changing behavior of X***~~</span>
-- If applied, this commit will <span style="color:red">~~***more fixes for broken stuff***~~</span>
-- If applied, this commit will <span style="color:red">~~***sweet new API methods***~~</span>
+- If applied, this commit will <span style="color:red">~~***Fixed bug with Y***~~</span>
+- If applied, this commit will <span style="color:red">~~***Changing behavior of X***~~</span>
+- If applied, this commit will <span style="color:red">~~***More fixes for broken stuff***~~</span>
+- If applied, this commit will <span style="color:red">~~***Sweet new API methods***~~</span>
 
 Deze gebiedende wijs gebruiken we enkel in de titel, niet in de body.
 ## 7	WRAP DE BODY OP 72 KARAKTERS
