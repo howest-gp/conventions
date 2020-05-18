@@ -33,3 +33,6 @@ public void Add_SingleNumber_ReturnsSameNumber()
 }
 ```
 Door middel van deze naamgeving is het onmiddellijk voor ons en anderen duidelijk wat deze test doet en wat we kunnen verwachten: we voegen een enkel nummer toe en verwachten hetzelfde nummer als return waarde.
+
+## Meer info
+[Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices#best-practices)
