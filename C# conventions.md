@@ -131,7 +131,7 @@ UriPart uriPart;
 >
 > Dit is in lijn met Microsofts .NET Framework en voorkomt inconsistente afkortingen.
 
-### 8. Gebruik PascalCasing voor afkortingen van 3 of meer karaketers.<br />Gebruik hoofdletters voor afkortingen van 2 karakters.
+### 8. Gebruik PascalCasing voor afkortingen van 3 of meer karakters.<br />Gebruik hoofdletters voor afkortingen van 2 karakters.
 
 ```csharp  
 // Correct
@@ -149,7 +149,7 @@ UiControl uiControl;
 > Dit is in lijn met Microsofts .NET Framework en verhoogt de leesbaarheid.
 > Hoofdletters eisen te veel visuele aandacht op.
 
-### 9. Gebruik voorgedefineerde type namen (C# aliases) zoals `int`, `float`, `string` voor declaraties.<br />Gebruik .NET Framework namen zoals `Int32`, `Single`, `String` wanneer je de statische members van dat type aanroept zoals `Int32.TryParse` of `String.Join`.
+### 9. Gebruik voorgedefinieerde type namen (C# aliases) zoals `int`, `float`, `string` voor declaraties.<br />Gebruik .NET Framework namen zoals `Int32`, `Single`, `String` wanneer je de statische members van dat type aanroept zoals `Int32.TryParse` of `String.Join`.
 
 ```csharp
 // Correct
@@ -213,7 +213,7 @@ public class DoWork
 > **Waarom?**
 >
 > Dit is in lijn met Microsofts .NET Framework en maakt code leesbaarder en zelfbeschrijvend.
-> Klassen worden benoemd met zelfstandig naamwoorden omdat ze geen acties zijn.
+> Klassen worden benoemd met zelfstandige naamwoorden omdat ze geen acties zijn.
 
 ### 12. Gebruik de letter I als prefix voor de naam van een interface. Interfaces zijn zelfstandige naamwoorden of adjectieven.
 
@@ -235,7 +235,7 @@ public interface IGroupable
 > Dit is in lijn met Microsofts .NET Framework en maakt code leesbaarder en zelfbeschrijvend.
 > Interface namen kunnen een adjectief zijn omdat ze geïmplementeerd worden door een klasse (zelfstandig naamwoord).
 
-### 13. Gebruik dezelfde bestandsnaam voor codebestanden als de klassenaam dat er in is gedefinieerd.
+### 13. Gebruik dezelfde bestandsnaam voor codebestanden als de klassenaam die er in is gedefinieerd.
 
 Uitzondering: bestandsnamen die partiële klassen bevatten moeten het doel of oorsprong beschrijven, b.v. designer, generated, enz.
 
