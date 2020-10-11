@@ -4,15 +4,15 @@
 De testklasse krijgt de naam van de geteste klasse met suffix `Tests`.
 
 ## Testmethods
-De naam van je unit tests moeten drie onderdelen bevatten:
+De naam van je unit tests moet drie onderdelen bevatten:
 - De naam van de methode die getest wordt
 - Het scenario waaronder het getest wordt
 - Het verwachte resultaat na het testen van het scenario
 
-Het volgen van deze afspraken omtrent de naamgeving zijn belangrijk omdat zo onmiddellijk de intentie van de test duidelijk wordt.
+Het volgen van deze afspraken omtrent de naamgeving is belangrijk, omdat zo onmiddellijk de intentie van de test duidelijk wordt.
 
 # WAAROM?
-Unit testing is meer dan alleen maar ervoor zorgen dat je code werkt, het voorziet ons ook van documentatie. Door de naamgeving van alle testen zou het duidelijk moeten worden wat het gedrag van de code is, zonder de code zelf te bekijken. Wanneer een test faalt kan men onmiddellijk zien welk scenario niet voldoet aan je verwachtingen.
+Unit testing is meer dan alleen maar ervoor zorgen dat je code werkt, het voorziet ons ook van documentatie. Door de naamgeving van alle testen zou het duidelijk moeten worden wat het gedrag van de code is, zonder de code zelf te bekijken. Wanneer een test faalt kan men onmiddellijk zien welk scenario niet voldoet aan de verwachtingen.
 
 # FOUTE NAAMGEVING
 ```csharp
@@ -22,9 +22,9 @@ public void Test_Single()
 	// Code…
 }
 ```
-Bovenstaande naamgeving voor de test zegt weinig tot niks. Door middel van deze naamgeving is het totaal niet duidelijk wat er getest zal worden en wat het verwachte resultaat is.
+Bovenstaande naamgeving voor de test zegt weinig tot niets. Door middel van deze naamgeving is het totaal niet duidelijk wat er getest zal worden en wat het verwachte resultaat is.
 
-# GOEIE NAAMGEVING
+# GOEDE NAAMGEVING
 ```csharp
 [Fact]
 public void Add_SingleNumber_ReturnsSameNumber()
