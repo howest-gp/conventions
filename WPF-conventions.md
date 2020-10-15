@@ -5,6 +5,7 @@
 | CheckBox                | **ckb** |
 | ComboBox                | **cmb** | 
 | Grid                    | **grd** | 
+| GroupBox                | **grb** | 
 | Label                   | **lbl** |
 | ListBox                 | **lst** |
 | ProgressBar             | **pgb** |
@@ -13,3 +14,4 @@
 | StackPanel              | **stp** | 
 | TextBlock               | **tbk** | 
 | TextBox                 | **txt** |
+| Window                  | **wnd** |
