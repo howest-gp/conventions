@@ -47,7 +47,7 @@ undefinedVariable = "No var, let or const keyword used. Normally this would be a
 >
 > Werken in strict mode verlaagt de kans op fouten. Wanneer een niet-gedeclareerde variabele wordt aangesproken in niet-strict mode, dan wordt er een `var`-variabele aangemaakt. Dit kan het debuggen soms onnodig vermoeilijken bij, bijvoorbeeld, tikfouten.
 
-## 4. Declareer variabelen aan het begin van hun scope.
+## 4. Declareer variabelen zo veel mogelijk aan het begin van hun scope.
 
 ```javascript
 //correct
