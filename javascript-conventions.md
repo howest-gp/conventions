@@ -337,26 +337,7 @@ para.innerHTML = text;
 >
 > `.textContent` is efficiënter en minder vatbaar voor fouten dan `.innerHTML`. Bovendien kan `.textContent` een [XSS-aanval](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting) voorkomen.
 
-## 20. Gebruik een initializer voor de teller in lussen.
-```javascript
-//correct
-let cats = ['Athena', 'Luna'];
-for(let i of cats) {
-  console.log(i);
-}
-
-//fout
-let cats = ['Athena', 'Luna'];
-for(i of cats) {
-  console.log(i);
-}
-
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie.
-
-## 21. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
+## 20. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
 let expr = 'Papayas';
@@ -387,7 +368,7 @@ switch(expr) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verlaagt de kans op fouten.
 
-## 22. Verkies het declareren van een functie boven een functie-expressie.
+## 21. Verkies het declareren van een functie boven een functie-expressie.
 ```javascript
 //verkies dit ...
 function sum(a, b) {
@@ -403,7 +384,7 @@ let sum = function(a, b) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 23. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
+## 22. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
 ```javascript
 //correct
 let myObject = {};
@@ -418,7 +399,7 @@ let myArray = new Array(length);
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie.
 
-## 24. Verkies de `.push` methode om elementen toe te voegen aan een array.
+## 23. Verkies de `.push` methode om elementen toe te voegen aan een array.
 ```javascript
 //correct
 const pets = [];
@@ -428,19 +409,6 @@ pets.push('cat');
 const pets = [];
 pets[pets.length] = 'cat';
 
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
-
-## 25. Gebruik error handling waar gepast.
-```javascript
-try {
-  console.log(results);
-}
-catch(e) {
-  console.error(e);
-}
 ```
 > **Waarom?**
 >
