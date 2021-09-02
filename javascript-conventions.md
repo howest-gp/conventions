@@ -290,14 +290,14 @@ age != 25;
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie. Bovendien verlaagt dit problemen bij vergelijkingen waar geen rekening gehouden wordt met het datatype, vgl..: <br> `"14" == 14` evalueert naar `true`, maar `"14" === 14` evalueert naar `false`.
 
-## 17. Gebruik shortcuts voor booleaanse tests.
+## 17. Verkies shortcuts voor booleaanse tests.
 ```javascript
-//correct
+//verkies dit ...
 if(!isAdult) {
 
 }
 
-//fout
+//... in plaats van dit ...
 if(isAdult === false) {
 
 }
@@ -307,13 +307,13 @@ if(isAdult === false) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 18. Gebruikt template literals in plaats van string literals.
+## 18. Verkies template literals in plaats van string literals.
 ```javascript
-//correct
+//verkies dit ...
 let myName = 'Chris';
 console.log(`Hi! I'm ${myName}!`);
 
-//fout
+//... in plaats van dit ...
 let myName = 'Chris';
 console.log('Hi! I\'m' + myName + '!');
 ```
