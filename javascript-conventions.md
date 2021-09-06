@@ -35,9 +35,9 @@ submit = document.getElementById("submit");
 Noteer steeds op de eerste lijn van je JavaScript-file dat in je in strict mode wil werken.
 
 ```javascript
-"use strict"
+"use strict";
 
-var definedVariale;
+var definedVariable;
 
 definedVariable = "this works";
 undefinedVariable = "No var, let or const keyword used. Normally this would be allowed, but not in strict mode.";
@@ -101,6 +101,12 @@ function myFunc() {
 
 //fout
 function myFunc() { console.log('Hello!'); };
+
+//ook fout
+function myFunc() 
+{
+  console.log('Hello!');
+};
 ```
 
 > **Waarom?**
@@ -206,6 +212,8 @@ let speed = distance / time;
 let thisIsaveryLONGVariableThatRecordsPlayerscore345654 = 0;
 
 let s = d/t;
+
+let ShouldBeLowerCamelCase = 0;
 ```
 > **Waarom?**
 >
@@ -321,7 +329,7 @@ console.log('Hi! I\'m' + myName + '!');
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 19. Gebruik `.textContent` in plaats van `.innerHTML`.
+## 19. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
 let text = 'Hello to all you good people';
@@ -340,8 +348,8 @@ para.innerHTML = text;
 ## 20. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
-let expr = 'Papayas';
-switch(expr) {
+let expression = 'Papayas';
+switch(expression) {
   case 'Oranges':
     console.log('Oranges are $0.59 a pound.');
     break;
@@ -349,12 +357,12 @@ switch(expr) {
     console.log('Papayas are $2.79 a pound.');
     break;
   default:
-    console.log('Sorry, we are out of ' + expr + '.');
+    console.log('Sorry, we are out of ' + expression + '.');
 }
 
 //fout
-let expr = 'Papayas';
-switch(expr) {
+let expression = 'Papayas';
+switch(expression) {
   case 'Oranges':
     console.log('Oranges are $0.59 a pound.');
     break;

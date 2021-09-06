@@ -33,7 +33,7 @@
 <p class='important'>Nope</p>
 ```
 
-## 4. Gebruik betekenisvolle `class` of `id` namen.
+## 4. Gebruik betekenisvolle `class` of `id` namen die bij voorkeur in kebab-case genoteerd worden.
 ```html
 <!--correct-->
 <p class="editorial-summary">...</p>
