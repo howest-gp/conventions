@@ -1,20 +1,47 @@
 # JavaScript codeerstandaarden en naamgevingsconventies
 
-## 1. Gebruik van `var`, `let` en `const` zoals hieronder beschreven.
-De scope van een variabele kan **lokaal** of **globaal** zijn. Globale variabelen kunnen op willekeurige plaatsen in het programma worden aangeroepen. Lokale variabelen worden in een functie of een codeblok gedeclareerd. Hun bereik beperkt zich tot deze functie of
-codeblok.
+## 1. Gebruik `let`, `const` en `var` zoals hieronder beschreven.
+Wanneer je een variabele of constante declareert, gebruik dan `let` of `const` en *niét* `var`.
 
-Voor de duidelijkheid maken we de volgende afspraken:
-* `var` gebruiken we enkel voor variabelen die globaal gebruikt worden, doorheen gans je script dus.
- * `let` gebruiken we enkel voor variabelen die binnen een bepaalde function of code block (if, lus …) gebruikt wordt
-* `const` behouden we voor waarden die nooit gewijzigd worden
+Wanneer een variable geen nieuwe waarde toegekend zal krijgen, verkies dan `const`:
+```javascript
+const userName = "Chris";
+console.log(userName);
+```
 
-|| `var` | `let` | `const` |
-|---|---|---|---|
-|gedeclareerd **buiten** een function| globaal | globaal | globaal |
-|gedeclareerd **buiten** een code block `{ ... }` | globaal | globaal | globaal |
-|gedeclareerd **binnen** een code block `{ ... }`| globaal | lokaal | lokaal |
-|gedeclareerd **binnen** een function| lokaal | lokaal | lokaal |
+Zoniet, gebruik dan `let`:
+```javascript
+let age = 40;
+age++;
+console.log(age);
+```
+
+Het voorbeeld hieronder toont het gebruik van `let`, terwijl er beter gekozen werd voor `const`. Deze code werkt, maar dient vermeden te worden:
+```javascript
+//fout
+let userName = "Chris";
+console.log(userName);
+```
+
+Het voorbeeld hieronder betreft het gebruik van `const`, terwijl het een nieuwe deze een nieuwe waarde toegekend krijgt. De toekenning van de nieuwe waarde
+gooit een error op:
+```javascript
+//fout
+const age = 40;
+age++;
+console.log("Happy Birthday!");
+```
+
+Dit voorbeeld gebruikt `var`. Vermijd `var` ten allen tijd, tenzij je het echt nodig is:
+```javascript
+//fout
+var age = 40;
+var name = "Chris";
+```
+
+> **Waarom?**
+>
+> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie, verhoogt de leesbaarheid en gebruikt bovendien moderne JavaScript features.
 
 ## 2. Gebruik de Hongaarse notatie wanneer de variabelen HTML-elementen bevatten.
 ```javascript
@@ -243,33 +270,7 @@ function notVeryObviousName() {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 13. Gebruik `let` wanneer een variabele een nieuwe waarde zal toegewezen krijgen. 
-```javascript
-//correct
-let myAge = 40;
-myAge++;
-console.log('Happy birthday!');
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
-
-## 14. Gebruik `const` wanneer de variabele niet zal wijzigen.
-```javascript
-//correct
-const myName = 'Chris';
-console.log(myName);
-
-//zal een error opgooien
-const myAge = '40';
-myAge++;
-console.log('Happy birthday!');
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
-
-## 15. Schrijf de ternary operators op één lijn.
+## 13. Schrijf de ternary operators op één lijn.
 ```javascript
 //correct
 let status = (age >= 18) ? 'adult' : 'minor';
@@ -283,7 +284,7 @@ let status = (age >= 18)
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 16. Verkies strikte vergelijkingsoperator.
+## 14. Verkies strikte vergelijkingsoperator.
 ```javascript
 //liever dit ...
 name === 'Chris';
@@ -298,7 +299,7 @@ age != 25;
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie. Bovendien verlaagt dit problemen bij vergelijkingen waar geen rekening gehouden wordt met het datatype, vgl..: <br> `"14" == 14` evalueert naar `true`, maar `"14" === 14` evalueert naar `false`.
 
-## 17. Verkies shortcuts voor booleaanse tests.
+## 15. Verkies shortcuts voor booleaanse tests.
 ```javascript
 //verkies dit ...
 if(!isAdult) {
@@ -315,7 +316,7 @@ if(isAdult === false) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 18. Verkies template literals in plaats van string literals.
+## 16. Verkies template literals in plaats van string literals.
 ```javascript
 //verkies dit ...
 let myName = 'Chris';
@@ -329,7 +330,7 @@ console.log('Hi! I\'m' + myName + '!');
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 19. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
+## 17. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
 let text = 'Hello to all you good people';
@@ -345,7 +346,7 @@ para.innerHTML = text;
 >
 > `.textContent` is efficiënter en minder vatbaar voor fouten dan `.innerHTML`. Bovendien kan `.textContent` een [XSS-aanval](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting) voorkomen.
 
-## 20. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
+## 18. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
 let expression = 'Papayas';
@@ -376,7 +377,7 @@ switch(expression) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verlaagt de kans op fouten.
 
-## 21. Verkies het declareren van een functie boven een functie-expressie.
+## 19. Verkies het declareren van een functie boven een functie-expressie.
 ```javascript
 //verkies dit ...
 function sum(a, b) {
@@ -392,7 +393,7 @@ let sum = function(a, b) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 22. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
+## 20. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
 ```javascript
 //correct
 let myObject = {};
@@ -407,7 +408,7 @@ let myArray = new Array(length);
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie.
 
-## 23. Verkies de `.push` methode om elementen toe te voegen aan een array.
+## 21. Verkies de `.push` methode om elementen toe te voegen aan een array.
 ```javascript
 //correct
 const pets = [];
