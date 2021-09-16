@@ -46,11 +46,11 @@ var name = "Chris";
 ## 2. Gebruik de Hongaarse notatie wanneer de variabelen HTML-elementen bevatten.
 ```javascript
 //correct
-var btnSubmit;
+let btnSubmit;
 btnSubmit = document.getElementById("submit");
 
 //fout
-var submit;
+let submit;
 submit = document.getElementById("submit");
 
 ```
@@ -64,7 +64,7 @@ Noteer steeds op de eerste lijn van je JavaScript-file dat in je in strict mode 
 ```javascript
 "use strict";
 
-var definedVariable;
+let definedVariable;
 
 definedVariable = "this works";
 undefinedVariable = "No var, let or const keyword used. Normally this would be allowed, but not in strict mode.";
@@ -88,16 +88,16 @@ function printStudentInfo() {
   divTitle = document.getElementbyId("title");
   
   
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 
 // ... eventueel ook correct
 function printStudentInfo() {
-  let teacherName = "Maxim";
-  let studentName = "Bart";
-  let divTitle = document.getElementbyId("title");
+  const teacherName = "Maxim";
+  const studentName = "Bart";
+  const divTitle = document.getElementbyId("title");
   
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 
 //fout
@@ -107,7 +107,7 @@ function printStudentInfo() {
   let divTitle = document.getElementbyId("title");
   let studentName;
   studentName = "Bart";
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 ```
 
@@ -219,7 +219,7 @@ function myFunc() {
   // Output the string 'Hello' to the browser's JS console
   console.log('Hello');
   // Create a new paragraph, fill it with content, and append it to the <body>
-  let para = document.createElement('p');
+  const para = document.createElement('p');
   para.textContent = 'My new paragraph';
   document.body.appendChild(para);
 }
@@ -319,11 +319,11 @@ if(isAdult === false) {
 ## 16. Verkies template literals in plaats van string literals.
 ```javascript
 //verkies dit ...
-let myName = 'Chris';
+const myName = 'Chris';
 console.log(`Hi! I'm ${myName}!`);
 
 //... in plaats van dit ...
-let myName = 'Chris';
+const myName = 'Chris';
 console.log('Hi! I\'m' + myName + '!');
 ```
 > **Waarom?**
@@ -333,12 +333,12 @@ console.log('Hi! I\'m' + myName + '!');
 ## 17. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
-let text = 'Hello to all you good people';
+const text = 'Hello to all you good people';
 const para = document.createElement('p');
 para.textContent = text;
 
 //fout
-let text = 'Hello to all you good people';
+const text = 'Hello to all you good people';
 const para = document.createElement('p');
 para.innerHTML = text;
 ```
