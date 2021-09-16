@@ -52,8 +52,25 @@ btnSubmit = document.getElementById("submit");
 //fout
 let submit;
 submit = document.getElementById("submit");
-
 ```
+
+Hieronder een niet-exhaustieve lijst van prefixes:
+|HTML-element|prefix|
+|------------|------|
+|`<div>`|div|
+|`<h1>, <h2>, <h3>, ...`|hdg|
+|`<input>`|inp|
+|`<textarea>`|txa|
+|`<button>`|btn|
+|`<select>`|slc|
+|`<input type="radio">`|rdb|
+|`<input type="checkbox">`|ckb|
+|`<table>`|tbl|
+|`<section>`|sct|
+|`<label>`|lbl|
+|`<form>`|frm|
+|`...`|...|
+
 > **Waarom?**
 >
 > Dit verhoogt de leesbaarheid van je code door duidelijk te maken dat de variabele verband houdt met de GUI.
