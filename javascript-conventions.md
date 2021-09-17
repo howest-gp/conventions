@@ -1,32 +1,69 @@
 # JavaScript codeerstandaarden en naamgevingsconventies
 
-## 1. Gebruik van `var`, `let` en `const` zoals hieronder beschreven.
-De scope van een variabele kan **lokaal** of **globaal** zijn. Globale variabelen kunnen op willekeurige plaatsen in het programma worden aangeroepen. Lokale variabelen worden in een functie of een codeblok gedeclareerd. Hun bereik beperkt zich tot deze functie of
-codeblok.
+## 1. Gebruik `let`, `const` en `var` zoals hieronder beschreven.
+Wanneer je een variabele of constante declareert, gebruik dan `let` of `const` en *niét* `var`.
 
-Voor de duidelijkheid maken we de volgende afspraken:
-* `var` gebruiken we enkel voor variabelen die globaal gebruikt worden, doorheen gans je script dus.
- * `let` gebruiken we enkel voor variabelen die binnen een bepaalde function of code block (if, lus …) gebruikt wordt
-* `const` behouden we voor waarden die nooit gewijzigd worden
+Wanneer een variable geen nieuwe waarde toegekend zal krijgen, verkies dan `const`:
+```javascript
+const userName = "Chris";
+console.log(userName);
+```
 
-|| `var` | `let` | `const` |
-|---|---|---|---|
-|gedeclareerd **buiten** een function| globaal | globaal | globaal |
-|gedeclareerd **buiten** een code block `{ ... }` | globaal | globaal | globaal |
-|gedeclareerd **binnen** een code block `{ ... }`| globaal | lokaal | lokaal |
-|gedeclareerd **binnen** een function| lokaal | lokaal | lokaal |
+Zoniet, gebruik dan `let`:
+```javascript
+let age = 40;
+age++;
+console.log(age);
+```
+
+Het voorbeeld hieronder toont het gebruik van `let`, terwijl er beter gekozen werd voor `const`. Deze code werkt, maar dient vermeden te worden:
+```javascript
+//fout
+let userName = "Chris";
+console.log(userName);
+```
+
+Het voorbeeld hieronder betreft het gebruik van `const`, terwijl het een nieuwe deze een nieuwe waarde toegekend krijgt. De toekenning van de nieuwe waarde
+gooit een error op:
+```javascript
+//fout
+const age = 40;
+age++;
+console.log("Happy Birthday!");
+```
+
+> **Waarom?**
+>
+> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie, verhoogt de leesbaarheid en gebruikt bovendien moderne JavaScript features.
 
 ## 2. Gebruik de Hongaarse notatie wanneer de variabelen HTML-elementen bevatten.
 ```javascript
 //correct
-var btnSubmit;
+let btnSubmit;
 btnSubmit = document.getElementById("submit");
 
 //fout
-var submit;
+let submit;
 submit = document.getElementById("submit");
-
 ```
+
+Hieronder een niet-exhaustieve lijst van prefixes:
+|HTML-element|prefix|
+|------------|------|
+|`<div>`|div|
+|`<h1>, <h2>, <h3>, ...`|hdg|
+|`<input>`|inp|
+|`<textarea>`|txa|
+|`<button>`|btn|
+|`<select>`|slc|
+|`<input type="radio">`|rdb|
+|`<input type="checkbox">`|ckb|
+|`<table>`|tbl|
+|`<section>`|sct|
+|`<label>`|lbl|
+|`<form>`|frm|
+|`...`|...|
+
 > **Waarom?**
 >
 > Dit verhoogt de leesbaarheid van je code door duidelijk te maken dat de variabele verband houdt met de GUI.
@@ -37,7 +74,7 @@ Noteer steeds op de eerste lijn van je JavaScript-file dat in je in strict mode 
 ```javascript
 "use strict";
 
-var definedVariable;
+let definedVariable;
 
 definedVariable = "this works";
 undefinedVariable = "No var, let or const keyword used. Normally this would be allowed, but not in strict mode.";
@@ -61,16 +98,16 @@ function printStudentInfo() {
   divTitle = document.getElementbyId("title");
   
   
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 
 // ... eventueel ook correct
 function printStudentInfo() {
-  let teacherName = "Maxim";
-  let studentName = "Bart";
-  let divTitle = document.getElementbyId("title");
+  const teacherName = "Maxim";
+  const studentName = "Bart";
+  const divTitle = document.getElementbyId("title");
   
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 
 //fout
@@ -80,7 +117,7 @@ function printStudentInfo() {
   let divTitle = document.getElementbyId("title");
   let studentName;
   studentName = "Bart";
-  divTitle.innerText = studentName + " volgt les bij " + teacherName;
+  divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 ```
 
@@ -96,16 +133,16 @@ function printStudentInfo() {
 ```javascript
 //correct
 function myFunc() {
-  console.log('Hello!');
+  console.log("Hello!");
 };
 
 //fout
-function myFunc() { console.log('Hello!'); };
+function myFunc() { console.log("Hello!"); };
 
 //ook fout
 function myFunc() 
 {
-  console.log('Hello!');
+  console.log("Hello!");
 };
 ```
 
@@ -116,16 +153,16 @@ function myFunc()
 ## 6. Beperkte de lengte van een lijn tot +- 80 karakters en splits ze op indien nodig.
 ```javascript
 //correct 
-let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign '
-+ 'matter may have nestled its way into his mighty throat. Many a fat alley rat '
-+ 'had met its demise while staring point blank down the cavernous barrel of '
-+ 'this awesome prowling machine.';
+let tommyCat = "Said Tommy the Cat as he reeled back to clear whatever foreign "
++ "matter may have nestled its way into his mighty throat. Many a fat alley rat "
++ "had met its demise while staring point blank down the cavernous barrel of "
++ "this awesome prowling machine.";
 
 //ook correct (met template literal)
 let tommyCat = `Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.`;
 
 //fout
-let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.';
+let tommyCat = "Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.";
 
 ```
 > **Waarom?**
@@ -135,13 +172,13 @@ let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign m
 ## 7. Gebruik spaties tussen operators, operanden, parameters, enzovoort.
 ```javascript
 //correct
-if(dayOfWeek === 7 && weather === 'sunny') {
-  goOnTrip('beach', 'car', ['ice cream', 'bucket and spade', 'beach towel']);
+if(dayOfWeek === 7 && weather === "sunny") {
+  goOnTrip("beach", "car", ["ice cream", "bucket and spade", "beach towel"]);
 }
 
 //fout
-if(dayOfWeek===7&&weather==='sunny'){
-  goOnTrip('beach','car',['ice cream','bucket and spade','beach towel']);
+if(dayOfWeek===7&&weather==="sunny"){
+  goOnTrip("beach","car",["ice cream","bucket and spade","beach towel"]);
 }
 ```
 > **Waarom?**
@@ -189,11 +226,11 @@ function myFunction(){
 ```javascript
 //correct
 function myFunc() {
-  // Output the string 'Hello' to the browser's JS console
-  console.log('Hello');
+  // Output the string "Hello" to the browser's JS console
+  console.log("Hello");
   // Create a new paragraph, fill it with content, and append it to the <body>
-  let para = document.createElement('p');
-  para.textContent = 'My new paragraph';
+  const para = document.createElement("p");
+  para.textContent = "My new paragraph";
   document.body.appendChild(para);
 }
 ```
@@ -227,70 +264,44 @@ let ShouldBeLowerCamelCase = 0;
 ```javascript
 //correct
 function sayHello() {
-  alert('Hello!');
+  alert("Hello!");
 };
 
 //fout
 function SayHello() {
-  alert('Hello!');
+  alert("Hello!");
 };
 
 function notVeryObviousName() {
-  alert('Hello!');
+  alert("Hello!");
 };
 ```
 > **Waarom?**
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 13. Gebruik `let` wanneer een variabele een nieuwe waarde zal toegewezen krijgen. 
+## 13. Schrijf de ternary operators op één lijn.
 ```javascript
 //correct
-let myAge = 40;
-myAge++;
-console.log('Happy birthday!');
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
-
-## 14. Gebruik `const` wanneer de variabele niet zal wijzigen.
-```javascript
-//correct
-const myName = 'Chris';
-console.log(myName);
-
-//zal een error opgooien
-const myAge = '40';
-myAge++;
-console.log('Happy birthday!');
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
-
-## 15. Schrijf de ternary operators op één lijn.
-```javascript
-//correct
-let status = (age >= 18) ? 'adult' : 'minor';
+let status = (age >= 18) ? "adult" : "minor";
 
 //fout
 let status = (age >= 18)
-  ? 'adult'
-  : 'minor';
+  ? "adult"
+  : "minor";
 ```
 > **Waarom?**
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 16. Verkies strikte vergelijkingsoperator.
+## 14. Verkies strikte vergelijkingsoperator.
 ```javascript
 //liever dit ...
-name === 'Chris';
+name === "Chris";
 age !== 25;
 
 //... dan dit
-name == 'Chris';
+name == "Chris";
 age != 25;
 
 ```
@@ -298,7 +309,7 @@ age != 25;
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie. Bovendien verlaagt dit problemen bij vergelijkingen waar geen rekening gehouden wordt met het datatype, vgl..: <br> `"14" == 14` evalueert naar `true`, maar `"14" === 14` evalueert naar `false`.
 
-## 17. Verkies shortcuts voor booleaanse tests.
+## 15. Verkies shortcuts voor booleaanse tests.
 ```javascript
 //verkies dit ...
 if(!isAdult) {
@@ -315,59 +326,59 @@ if(isAdult === false) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 18. Verkies template literals in plaats van string literals.
+## 16. Verkies template literals in plaats van string literals.
 ```javascript
 //verkies dit ...
-let myName = 'Chris';
+const myName = "Chris";
 console.log(`Hi! I'm ${myName}!`);
 
 //... in plaats van dit ...
-let myName = 'Chris';
-console.log('Hi! I\'m' + myName + '!');
+const myName = "Chris";
+console.log("Hi! I\'m " + myName + "!");
 ```
 > **Waarom?**
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 19. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
+## 17. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
-let text = 'Hello to all you good people';
-const para = document.createElement('p');
+const text = "Hello to all you good people";
+const para = document.createElement("p");
 para.textContent = text;
 
 //fout
-let text = 'Hello to all you good people';
-const para = document.createElement('p');
+const text = "Hello to all you good people";
+const para = document.createElement("p");
 para.innerHTML = text;
 ```
 > **Waarom?**
 >
 > `.textContent` is efficiënter en minder vatbaar voor fouten dan `.innerHTML`. Bovendien kan `.textContent` een [XSS-aanval](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting) voorkomen.
 
-## 20. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
+## 18. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
-let expression = 'Papayas';
+let expression = "Papayas";
 switch(expression) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Papayas':
-    console.log('Papayas are $2.79 a pound.');
+  case "Papayas":
+    console.log("Papayas are $2.79 a pound.");
     break;
   default:
-    console.log('Sorry, we are out of ' + expression + '.');
+    console.log(`Sorry, we are out of ${expression}.`);
 }
 
 //fout
-let expression = 'Papayas';
+let expression = "Papayas";
 switch(expression) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Papayas':
-    console.log('Papayas are $2.79 a pound.');
+  case "Papayas":
+    console.log("Papayas are $2.79 a pound.");
     break;
 }
 
@@ -376,7 +387,7 @@ switch(expression) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verlaagt de kans op fouten.
 
-## 21. Verkies het declareren van een functie boven een functie-expressie.
+## 19. Verkies het declareren van een functie boven een functie-expressie.
 ```javascript
 //verkies dit ...
 function sum(a, b) {
@@ -392,7 +403,7 @@ let sum = function(a, b) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 22. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
+## 20. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
 ```javascript
 //correct
 let myObject = {};
@@ -407,15 +418,15 @@ let myArray = new Array(length);
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie.
 
-## 23. Verkies de `.push` methode om elementen toe te voegen aan een array.
+## 21. Verkies de `.push` methode om elementen toe te voegen aan een array.
 ```javascript
 //correct
 const pets = [];
-pets.push('cat');
+pets.push("cat");
 
 //fout
 const pets = [];
-pets[pets.length] = 'cat';
+pets[pets.length] = "cat";
 
 ```
 > **Waarom?**
