@@ -140,16 +140,16 @@ function printStudentInfo() {
 ```javascript
 //correct
 function myFunc() {
-  console.log('Hello!');
+  console.log("Hello!");
 };
 
 //fout
-function myFunc() { console.log('Hello!'); };
+function myFunc() { console.log("Hello!"); };
 
 //ook fout
 function myFunc() 
 {
-  console.log('Hello!');
+  console.log("Hello!");
 };
 ```
 
@@ -160,16 +160,16 @@ function myFunc()
 ## 6. Beperkte de lengte van een lijn tot +- 80 karakters en splits ze op indien nodig.
 ```javascript
 //correct 
-let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign '
-+ 'matter may have nestled its way into his mighty throat. Many a fat alley rat '
-+ 'had met its demise while staring point blank down the cavernous barrel of '
-+ 'this awesome prowling machine.';
+let tommyCat = "Said Tommy the Cat as he reeled back to clear whatever foreign "
++ "matter may have nestled its way into his mighty throat. Many a fat alley rat "
++ "had met its demise while staring point blank down the cavernous barrel of "
++ "this awesome prowling machine.";
 
 //ook correct (met template literal)
 let tommyCat = `Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.`;
 
 //fout
-let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.';
+let tommyCat = "Said Tommy the Cat as he reeled back to clear whatever foreign matter may have nestled its way into his mighty throat. Many a fat alley rat had met its demise while staring point blank down the cavernous barrel of this awesome prowling machine.";
 
 ```
 > **Waarom?**
@@ -179,13 +179,13 @@ let tommyCat = 'Said Tommy the Cat as he reeled back to clear whatever foreign m
 ## 7. Gebruik spaties tussen operators, operanden, parameters, enzovoort.
 ```javascript
 //correct
-if(dayOfWeek === 7 && weather === 'sunny') {
-  goOnTrip('beach', 'car', ['ice cream', 'bucket and spade', 'beach towel']);
+if(dayOfWeek === 7 && weather === "sunny") {
+  goOnTrip("beach", "car", ["ice cream", "bucket and spade", "beach towel"]);
 }
 
 //fout
-if(dayOfWeek===7&&weather==='sunny'){
-  goOnTrip('beach','car',['ice cream','bucket and spade','beach towel']);
+if(dayOfWeek===7&&weather==="sunny"){
+  goOnTrip("beach","car",["ice cream","bucket and spade","beach towel"]);
 }
 ```
 > **Waarom?**
@@ -233,11 +233,11 @@ function myFunction(){
 ```javascript
 //correct
 function myFunc() {
-  // Output the string 'Hello' to the browser's JS console
-  console.log('Hello');
+  // Output the string "Hello" to the browser's JS console
+  console.log("Hello");
   // Create a new paragraph, fill it with content, and append it to the <body>
-  const para = document.createElement('p');
-  para.textContent = 'My new paragraph';
+  const para = document.createElement("p");
+  para.textContent = "My new paragraph";
   document.body.appendChild(para);
 }
 ```
@@ -271,16 +271,16 @@ let ShouldBeLowerCamelCase = 0;
 ```javascript
 //correct
 function sayHello() {
-  alert('Hello!');
+  alert("Hello!");
 };
 
 //fout
 function SayHello() {
-  alert('Hello!');
+  alert("Hello!");
 };
 
 function notVeryObviousName() {
-  alert('Hello!');
+  alert("Hello!");
 };
 ```
 > **Waarom?**
@@ -290,12 +290,12 @@ function notVeryObviousName() {
 ## 13. Schrijf de ternary operators op één lijn.
 ```javascript
 //correct
-let status = (age >= 18) ? 'adult' : 'minor';
+let status = (age >= 18) ? "adult" : "minor";
 
 //fout
 let status = (age >= 18)
-  ? 'adult'
-  : 'minor';
+  ? "adult"
+  : "minor";
 ```
 > **Waarom?**
 >
@@ -304,11 +304,11 @@ let status = (age >= 18)
 ## 14. Verkies strikte vergelijkingsoperator.
 ```javascript
 //liever dit ...
-name === 'Chris';
+name === "Chris";
 age !== 25;
 
 //... dan dit
-name == 'Chris';
+name == "Chris";
 age != 25;
 
 ```
@@ -336,12 +336,12 @@ if(isAdult === false) {
 ## 16. Verkies template literals in plaats van string literals.
 ```javascript
 //verkies dit ...
-const myName = 'Chris';
+const myName = "Chris";
 console.log(`Hi! I'm ${myName}!`);
 
 //... in plaats van dit ...
-const myName = 'Chris';
-console.log('Hi! I\'m' + myName + '!');
+const myName = "Chris";
+console.log("Hi! I\'m " + myName + "!");
 ```
 > **Waarom?**
 >
@@ -350,13 +350,13 @@ console.log('Hi! I\'m' + myName + '!');
 ## 17. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
-const text = 'Hello to all you good people';
-const para = document.createElement('p');
+const text = "Hello to all you good people";
+const para = document.createElement("p");
 para.textContent = text;
 
 //fout
-const text = 'Hello to all you good people';
-const para = document.createElement('p');
+const text = "Hello to all you good people";
+const para = document.createElement("p");
 para.innerHTML = text;
 ```
 > **Waarom?**
@@ -366,26 +366,26 @@ para.innerHTML = text;
 ## 18. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
-let expression = 'Papayas';
+let expression = "Papayas";
 switch(expression) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Papayas':
-    console.log('Papayas are $2.79 a pound.');
+  case "Papayas":
+    console.log("Papayas are $2.79 a pound.");
     break;
   default:
-    console.log('Sorry, we are out of ' + expression + '.');
+    console.log(`Sorry, we are out of ${expression}.`);
 }
 
 //fout
-let expression = 'Papayas';
+let expression = "Papayas";
 switch(expression) {
-  case 'Oranges':
-    console.log('Oranges are $0.59 a pound.');
+  case "Oranges":
+    console.log("Oranges are $0.59 a pound.");
     break;
-  case 'Papayas':
-    console.log('Papayas are $2.79 a pound.');
+  case "Papayas":
+    console.log("Papayas are $2.79 a pound.");
     break;
 }
 
@@ -429,11 +429,11 @@ let myArray = new Array(length);
 ```javascript
 //correct
 const pets = [];
-pets.push('cat');
+pets.push("cat");
 
 //fout
 const pets = [];
-pets[pets.length] = 'cat';
+pets[pets.length] = "cat";
 
 ```
 > **Waarom?**
