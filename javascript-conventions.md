@@ -32,13 +32,6 @@ age++;
 console.log("Happy Birthday!");
 ```
 
-Dit voorbeeld gebruikt `var`. Vermijd `var` ten allen tijd, tenzij je het echt nodig is:
-```javascript
-//fout
-var age = 40;
-var name = "Chris";
-```
-
 > **Waarom?**
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie, verhoogt de leesbaarheid en gebruikt bovendien moderne JavaScript features.
