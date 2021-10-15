@@ -62,6 +62,7 @@ Hieronder een niet-exhaustieve lijst van prefixes:
 |`<section>`|sct|
 |`<label>`|lbl|
 |`<form>`|frm|
+|`<a>`|anc|
 |`...`|...|
 
 > **Waarom?**
