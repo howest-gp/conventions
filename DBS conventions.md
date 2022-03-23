@@ -47,3 +47,17 @@
     * Stel : 
       * tabel Authors heeft als PK **authorId**  
       * in tabel Books komt een FK kolom die naar deze PK (in Authors) verwijst, dan gebruik je in Books eveneens **authorId**  
+  
+## Constraints
+  Dien je zelf een naam te geven aan een constraint, dan zijn dit de afspraken :    
+  * voor PK :  
+    * gebruik prefix **pk_** gevolgd door de tabelnaam
+    * Bijvoorbeeld : constraint **pk_Students** primary key(studentId)
+  * voor FK : 
+    * gebruik prefix **fk_**
+      *  indien de enige FK in de tabel, dan kan je dit laten volgen door de tabelnaam    
+         Bijvoorbeeld een FK in de tabel Students  : constraint **fk_Students** foreign key(departmentId) references Departments(departmentId)    
+       * indien er meerder FK's in de tabel zijn, dan laat je dit volgen door de tabelnaam + underscore + naam van de betrokken kolom
+         Bijvoorbeeld 2 FK's in de tabel Books : 
+           * constraint **fk_Books_authorId** foreign key(authorId) references Authors(authorId)  
+           * constraint **fk_Books_publisherId** foreign key(publisherId) references Publishers(publisherId)  
