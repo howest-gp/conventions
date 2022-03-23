@@ -20,8 +20,9 @@
     * :x: Book is NIET correct  
   * voor zogenaamde "tussentabellen" de namen van de betrokken tabellen samengevoegd     
     *  :white_check_mark: BooksAuthors is correct  
+    *  :white_check_mark: AuthorsBooks is correct  
     * :x: BooksAndAuthors is NIET correct    
-
+    * :x: AuthorsInBooks is NIET correct    
 ## Kolomnamen   
   Gebruik
   * een Engelstalige naam
@@ -34,8 +35,10 @@
     *  :white_check_mark: location is correct  
     * :x: location**s** is NIET correct  
   
-  **Speciale aandacht voor volgende**  
-    * Primaire sleutels  
-      * Wanneer als PK een identity of uniqueIdentifier kolommen dan gebruik je als prefix de naam van de tabel in enkelvoud, gevolgd door de tekst Id of Number of ...  
-        * :white_check_mark: OrderItems is correct
-        * :x: orderItems is NIET correct       
+  **Speciale aandacht voor PK kolommen**  
+    *Omwille van agosische redenen (1° semester) wordt afgeweken van wat traditioneel gebruikt wordt binnen Entity Framework*  
+    * Wanneer als PK een identity of uniqueIdentifier kolommen dan gebruik je als prefix de naam van de tabel in enkelvoud, gevolgd door de tekst Id of Number of ...  
+      * :white_check_mark: orderId is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)  
+      * :white_check_mark: orderNumber is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)        
+      * :x: id is NIET correct    
+      * :x: number is NIET correct 
