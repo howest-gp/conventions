@@ -43,4 +43,7 @@
       * :x: number is NIET correct (in de veronderstelling dat dit de PK van de tabel zou zijn)   
     
     **Speciale aandacht voor FK kolommen**   
-    * Wanneer een kolom dienst moet doen als PK en een identity of uniqueIdentifier kolom is, dan gebruik je als prefix de naam van de tabel in enkelvoud, gevolgd door de tekst "Id" of "Number"     
+    * Wanneer een kolom dienst moet doen als FK dan gebruik je als naam dezelfde naam als de kolom uit de andere tabel waar de FK naar toe verwijst.  
+    * Stel : 
+      * tabel Authors heeft als PK **authorId**  
+      * in tabel Books komt een FK kolom die naar deze PK (in Authors) verwijst, dan gebruik je in Books eveneens **authorId**  
