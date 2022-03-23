@@ -35,11 +35,9 @@
     *  :white_check_mark: location is correct  
     * :x: location**s** is NIET correct  
   
-  **Speciale aandacht voor PK kolommen**     
-    *Omwille van agosische redenen (1° semester) wordt afgeweken van wat traditioneel gebruikt wordt binnen Entity Framework*  
-    
-    * Wanneer als PK een identity of uniqueIdentifier kolommen dan gebruik je als prefix de naam van de tabel in enkelvoud, gevolgd door de tekst Id of Number of ...  
-      * :white_check_mark: orderId is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)  
-      * :white_check_mark: orderNumber is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)        
-      * :x: id is NIET correct    
-      * :x: number is NIET correct 
+  **Speciale aandacht voor PK kolommen**  *(Omwille van agosische redenen (1° semester) wordt afgeweken van wat later traditioneel gebruikt wordt binnen Entity Framework)*     
+    * Wanneer als PK een identity of uniqueIdentifier kolommen dan gebruik je als prefix de naam van de tabel in enkelvoud, gevolgd door de tekst Id of Number of ...    
+      * :white_check_mark: orderId is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)    
+      * :white_check_mark: orderNumber is correct (in de veronderstelling dat dit de PK van de tabel Orders zou zijn)          
+      * :x: id is NIET correct     
+      * :x: number is NIET correct   
