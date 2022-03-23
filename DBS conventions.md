@@ -61,3 +61,13 @@
          Bijvoorbeeld 2 FK's in de tabel Books : 
            * constraint **fk_Books_authorId** foreign key(authorId) references Authors(authorId)  
            * constraint **fk_Books_publisherId** foreign key(publisherId) references Publishers(publisherId)  
+  * voor Unique constraints : 
+    * gebruik de prefix **uq_** plus de naam van de kolom waarop dit slaat  
+    * voorbeeld : ... constraint uc_socialSecurity UNIQUE (socialSecurity) 
+  * voor Check constraints :   
+    * gebruik de prefix **chk_** plus de naam van de kolom waarop dit slaat     
+    * voorbeeld : ... constraint chk_tuitionFees CHECK (tuitionFees between 0 and 500)  
+  * voor Default constraints :   
+    * gebruik de prefix **df_** plus de naam van de kolom waarop dit slaat  
+    * voorbeeld : ... constraint df_tuitionFees DEFAULT 550 for tuitionFees    
+
