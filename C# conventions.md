@@ -34,7 +34,7 @@ public class ClientActivity
 >
 > Dit is in lijn met Microsofts .NET Framework en verhoogt de leesbaarheid.
 
-### 2. Gebruik camelCase voor parameters en lokale variabelen.
+### 2. Gebruik lower camelCase voor parameters en lokale variabelen.
 
 ```csharp
 public class UserLog
