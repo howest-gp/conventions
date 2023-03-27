@@ -201,31 +201,7 @@ alert("Hello world!")
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid van je code. Door een ; te noteren expliciteer je namelijk waar het statement eindigt.
 
-## 9. Er komt géén spatie voor keywords van controlestructuren, functies of lusstructuren, maar wel erna.
-```javascript
-//correct
-if(credits > 10) {
-  
-}
-
-function myFunction() {
-
-}
-
-//fout
-if (credits > 10){
-  
-}
-
-function myFunction(){
-  
-}
-```
-> **Waarom?**
->
-> Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid van je code.
-
-## 10. Commentaren komen boven de code in kwestie.
+## 9. Commentaren komen boven de code in kwestie.
 ```javascript
 //correct
 function myFunc() {
@@ -241,7 +217,7 @@ function myFunc() {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid van je code.
 
-## 11. Gebruik betekenisvolle namen in lowerCamelCase voor variabelen.
+## 10. Gebruik betekenisvolle namen in lowerCamelCase voor variabelen.
 ```javascript
 //correct
 let playerScore = 0;
@@ -263,27 +239,27 @@ let ShouldBeLowerCamelCase = 0;
 >
 > Het is wel toegelaten om variabelenamen zoals `i`, `j`, ... te gebruiken in lussen.
 
-## 12. Gebruik betekenisvolle namen lowerCamelCase voor functies.
+## 11. Gebruik betekenisvolle namen lowerCamelCase voor functies.
 ```javascript
 //correct
 function sayHello() {
   alert("Hello!");
-};
+}
 
 //fout
 function SayHello() {
   alert("Hello!");
-};
+}
 
 function notVeryObviousName() {
   alert("Hello!");
-};
+}
 ```
 > **Waarom?**
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 13. Schrijf de ternary operators op één lijn.
+## 12. Schrijf de ternary operators op één lijn.
 ```javascript
 //correct
 let status = (age >= 18) ? "adult" : "minor";
@@ -297,7 +273,7 @@ let status = (age >= 18)
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 14. Verkies strikte vergelijkingsoperator.
+## 13. Verkies strikte vergelijkingsoperator.
 ```javascript
 //liever dit ...
 name === "Chris";
@@ -312,7 +288,7 @@ age != 25;
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie. Bovendien verlaagt dit problemen bij vergelijkingen waar geen rekening gehouden wordt met het datatype, vgl..: <br> `"14" == 14` evalueert naar `true`, maar `"14" === 14` evalueert naar `false`.
 
-## 15. Verkies shortcuts voor booleaanse tests.
+## 14. Verkies shortcuts voor booleaanse tests.
 ```javascript
 //verkies dit ...
 if(!isAdult) {
@@ -329,7 +305,7 @@ if(isAdult === false) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 16. Verkies template literals in plaats van string literals.
+## 15. Verkies template literals in plaats van string literals.
 ```javascript
 //verkies dit ...
 const myName = "Chris";
@@ -343,7 +319,7 @@ console.log("Hi! I\'m " + myName + "!");
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 17. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
+## 16. Gebruik `.textContent` in plaats van `.innerHTML` wanneer je tekst wil toevoegen aan DOM-elementen.
 ```javascript
 //correct
 const text = "Hello to all you good people";
@@ -359,7 +335,7 @@ para.innerHTML = text;
 >
 > `.textContent` is efficiënter en minder vatbaar voor fouten dan `.innerHTML`. Bovendien kan `.textContent` een [XSS-aanval](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting) voorkomen.
 
-## 18. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
+## 17. Geef een switch-statement altijd een `default` case ook al lijkt die overbodig.
 ```javascript
 //correct
 let expression = "Papayas";
@@ -390,7 +366,7 @@ switch(expression) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verlaagt de kans op fouten.
 
-## 19. Verkies het declareren van een functie boven een functie-expressie.
+## 18. Verkies het declareren van een functie boven een functie-expressie.
 ```javascript
 //verkies dit ...
 function sum(a, b) {
@@ -406,7 +382,7 @@ let sum = function(a, b) {
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie en verhoogt de leesbaarheid.
 
-## 20. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
+## 19. Gebruik literals in plaats van constructors voor het maken van objecten of arrays.
 ```javascript
 //correct
 let myObject = {};
@@ -421,7 +397,7 @@ let myArray = new Array(length);
 >
 > Dit is in lijn met de Mozilla Developer Network's (MDN) documentatie.
 
-## 21. Verkies de `.push` methode om elementen toe te voegen aan een array.
+## 20. Verkies de `.push` methode om elementen toe te voegen aan een array.
 ```javascript
 //correct
 const pets = [];
