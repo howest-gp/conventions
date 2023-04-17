@@ -515,6 +515,21 @@ public class BarcodeReadError : System.Exception
 
 ### 26. Laat geen code in commentaar staan.
 
+```csharp
+// Fout
+public void Foo()
+{
+  // Console.WriteLine("-- test --");
+  Console.WriteLine("Hello world");
+}
+
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+}
+```
+
 > **Waarom?**
 >
 > Code in commentaar zetten kan je doen om even iets uit te proberen, bv. tijdens het debuggen. In je finale uitwerking laat je code in commentaar beter weg aangezien ze niks toevoegt. Je bent sowieso steeds in staat om oude probeersels indien nodig later terug op te vissen door terug te keren in de Git history.
