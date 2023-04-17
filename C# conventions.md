@@ -521,16 +521,16 @@ public class BarcodeReadError : System.Exception
 ### 26. Laat geen code in commentaar staan.
 
 ```csharp
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+}
+
 // Fout
 public void Foo()
 {
   // Console.WriteLine("-- test --");
-  Console.WriteLine("Hello world");
-}
-
-// Correct
-public void Foo()
-{
   Console.WriteLine("Hello world");
 }
 ```
@@ -542,6 +542,13 @@ public void Foo()
 ### 27. Vermijd een overvloed aan overbodige lege regels.
 
 ```csharp
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+  Console.ReadLine();
+}
+
 // Fout
 public void Foo()
 
@@ -555,13 +562,6 @@ public void Foo()
   Console.ReadLine();
 
 
-}
-
-// Correct
-public void Foo()
-{
-  Console.WriteLine("Hello world");
-  Console.ReadLine();
 }
 ```
 
@@ -572,18 +572,18 @@ public void Foo()
 ### 28. Gebruik velden voor louter interne zaken (geen auto-properties).
 
 ```csharp
-// Fout
-public class Foo
-{
-  private int Id { get; set; }
-
-  // ...
-}
-
 // Correct
 public class Foo
 {
   private int id;
+
+  // ...
+}
+
+// Fout
+public class Foo
+{
+  private int Id { get; set; }
 
   // ...
 }
