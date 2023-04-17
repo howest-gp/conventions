@@ -296,7 +296,7 @@ class Program {
 
 > **Waarom?**
 >
-> Algemeen aanvaardde manier om code leesbaarder te maken.
+> Algemeen aanvaarde manier om code leesbaarder te maken.
 
 ### 16. Declareer velden en properties bovenaan in je klasse, met statische velden helemaal bovenaan. Hierna volgen constructoren en dan methoden.
 
