@@ -298,22 +298,30 @@ class Program {
 >
 > Algemeen aanvaardde manier om code leesbaarder te maken.
 
-### 16. Declareer alle klasse members bovenaan, met statische variabelen helemaal bovenaan.
+### 16. Declareer velden en properties bovenaan in je klasse, met statische velden helemaal bovenaan. Hierna volgen constructoren en dan methoden.
 
 ```csharp 
 // Correct
 public class Account
 {
   public static string BankName;
-  public static decimal Reserves;      
+  public static decimal Reserves;
+
   public string Number { get; set; }
   public DateTime DateOpened { get; set; }
   public DateTime DateClosed { get; set; }
-  public decimal Balance { get; set; }     
+  public decimal Balance { get; set; } 
+
   // Constructor
   public Account()
   {
     // ...
+  }
+
+  // Methoden
+  public void Withdraw(decimal amount)
+  {
+    Balance -= amount;
   }
 }
 ```
@@ -504,6 +512,66 @@ public class BarcodeReadError : System.Exception
 > **Waarom?**
 >
 > Dit is in lijn met Microsofts .NET Framework, is makkelijk te lezen en is herkenbaar.
+
+### 26. Laat geen code in commentaar staan.
+
+> **Waarom?**
+>
+> Code in commentaar zetten kan je doen om even iets uit te proberen, bv. tijdens het debuggen. In je finale uitwerking laat je code in commentaar beter weg aangezien ze niks toevoegt. Je bent sowieso steeds in staat om oude probeersels indien nodig later terug op te vissen door terug te keren in de Git history.
+
+### 27. Vermijd een overvloed aan overbodige lege regels.
+
+```csharp
+// Fout
+public void Foo()
+
+
+{
+
+  Console.WriteLine("Hello world");
+
+
+
+  Console.ReadLine();
+
+
+}
+
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+  Console.ReadLine();
+}
+```
+
+> **Waarom?**
+>
+> Dit maakt je code properder en leesbaarder.
+
+### 28. Gebruik velden voor louter interne zaken (geen auto-properties).
+
+```csharp
+// Fout
+public class Foo
+{
+  private int Id { get; set; }
+
+  // ...
+}
+
+// Correct
+public class Foo
+{
+  private int id;
+
+  // ...
+}
+```
+
+> **Waarom?**
+>
+> Een eenvoudig privaat veld volstaat wanneer je de bewaarde gegevens enkel in de klasse zelf rechtstreeks nodig hebt. Een (auto-)property is complexer en pas nodig/nuttig wanneer je van buitenaf met de achterliggende waarde wil interageren.
 
 ## Referenties
 
