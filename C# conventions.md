@@ -304,13 +304,18 @@ class Program {
 // Correct
 public class Account
 {
-  public static string BankName;
-  public static decimal Reserves;
+  private static string bankName;
 
   public string Number { get; set; }
   public DateTime DateOpened { get; set; }
   public DateTime DateClosed { get; set; }
-  public decimal Balance { get; set; } 
+
+  private decimal balance;
+  public decimal Balance
+  {
+    get { return balance; }
+    set { balance = Math.Max(0, value); }
+  } 
 
   // Constructor
   public Account()
