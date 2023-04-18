@@ -296,24 +296,37 @@ class Program {
 
 > **Waarom?**
 >
-> Algemeen aanvaardde manier om code leesbaarder te maken.
+> Algemeen aanvaarde manier om code leesbaarder te maken.
 
-### 16. Declareer alle klasse members bovenaan, met statische variabelen helemaal bovenaan.
+### 16. Declareer velden en properties bovenaan in je klasse, met statische velden helemaal bovenaan. Hierna volgen constructoren en dan methoden.
 
 ```csharp 
 // Correct
 public class Account
 {
-  public static string BankName;
-  public static decimal Reserves;      
+  private static string bankName;
+
   public string Number { get; set; }
   public DateTime DateOpened { get; set; }
   public DateTime DateClosed { get; set; }
-  public decimal Balance { get; set; }     
+
+  private decimal balance;
+  public decimal Balance
+  {
+    get { return balance; }
+    set { balance = Math.Max(0, value); }
+  } 
+
   // Constructor
   public Account()
   {
     // ...
+  }
+
+  // Methoden
+  public void Withdraw(decimal amount)
+  {
+    Balance -= amount;
   }
 }
 ```
@@ -504,6 +517,81 @@ public class BarcodeReadError : System.Exception
 > **Waarom?**
 >
 > Dit is in lijn met Microsofts .NET Framework, is makkelijk te lezen en is herkenbaar.
+
+### 26. Laat geen code in commentaar staan.
+
+```csharp
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+}
+
+// Fout
+public void Foo()
+{
+  // Console.WriteLine("-- test --");
+  Console.WriteLine("Hello world");
+}
+```
+
+> **Waarom?**
+>
+> Code in commentaar zetten kan je doen om even iets uit te proberen, bv. tijdens het debuggen. In je finale uitwerking laat je code in commentaar beter weg aangezien ze niks toevoegt. Je bent sowieso steeds in staat om oude probeersels indien nodig later terug op te vissen door terug te keren in de Git history.
+
+### 27. Vermijd een overvloed aan overbodige lege regels.
+
+```csharp
+// Correct
+public void Foo()
+{
+  Console.WriteLine("Hello world");
+  Console.ReadLine();
+}
+
+// Fout
+public void Foo()
+
+
+{
+
+  Console.WriteLine("Hello world");
+
+
+
+  Console.ReadLine();
+
+
+}
+```
+
+> **Waarom?**
+>
+> Dit maakt je code properder en leesbaarder.
+
+### 28. Gebruik velden voor louter interne zaken (geen auto-properties).
+
+```csharp
+// Correct
+public class Foo
+{
+  private int id;
+
+  // ...
+}
+
+// Fout
+public class Foo
+{
+  private int Id { get; set; }
+
+  // ...
+}
+```
+
+> **Waarom?**
+>
+> Een eenvoudig privaat veld volstaat wanneer je de bewaarde gegevens enkel in de klasse zelf rechtstreeks nodig hebt. Een (auto-)property is complexer en pas nodig/nuttig wanneer je van buitenaf met de achterliggende waarde wil interageren.
 
 ## Referenties
 
