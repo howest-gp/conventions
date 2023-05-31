@@ -63,7 +63,7 @@
            * constraint **fk_Books_publisherId** foreign key(publisherId) references Publishers(publisherId)  
   * voor Unique constraints : 
     * gebruik de prefix **uq_** plus de naam van de kolom waarop dit slaat  
-    * voorbeeld : ... constraint uc_socialSecurity UNIQUE (socialSecurity) 
+    * voorbeeld : ... constraint uq_socialSecurity UNIQUE (socialSecurity) 
   * voor Check constraints :   
     * gebruik de prefix **chk_** plus de naam van de kolom waarop dit slaat     
     * voorbeeld : ... constraint chk_tuitionFees CHECK (tuitionFees between 0 and 500)  
