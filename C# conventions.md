@@ -333,7 +333,7 @@ public class Account
 
 > **Waarom?**
 >
-> Algemeen aanvaardde manier die voorkomt dat je scrollend op zoek moet gaan naar member declaraties.
+> Algemeen aanvaarde manier die voorkomt dat je scrollend op zoek moet gaan naar member declaraties.
 
 ### 17. Gebruik enkelvoudige namen voor enums.<br />Gebruik meervoud voor bitwise enums.
 
