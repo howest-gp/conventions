@@ -95,7 +95,7 @@ function printStudentInfo() {
   let divTitle;
 
   teacherName = "Maxim";
-  studentName = "Bart";
+  studentName = "Evy";
   divTitle = document.getElementbyId("title");
   
   
@@ -105,7 +105,7 @@ function printStudentInfo() {
 // ... eventueel ook correct
 function printStudentInfo() {
   const teacherName = "Maxim";
-  const studentName = "Bart";
+  const studentName = "Evy";
   const divTitle = document.getElementbyId("title");
   
   divTitle.textContent = studentName + " volgt les bij " + teacherName;
@@ -117,7 +117,7 @@ function printStudentInfo() {
   teacherName = "Maxim";
   let divTitle = document.getElementbyId("title");
   let studentName;
-  studentName = "Bart";
+  studentName = "Evy";
   divTitle.textContent = studentName + " volgt les bij " + teacherName;
 }
 ```
@@ -135,7 +135,7 @@ function printStudentInfo() {
 //correct
 function myFunc() {
   console.log("Hello!");
-};
+}
 
 //fout
 function myFunc() { console.log("Hello!"); };
@@ -144,7 +144,7 @@ function myFunc() { console.log("Hello!"); };
 function myFunc() 
 {
   console.log("Hello!");
-};
+}
 ```
 
 > **Waarom?**
@@ -374,7 +374,7 @@ function sum(a, b) {
 }
 
 //... boven dit
-let sum = function(a, b) {
+const sum = function(a, b) {
   return a + b;
 }
 ```
