@@ -149,21 +149,17 @@ UiControl uiControl;
 > Dit is in lijn met Microsofts .NET Framework en verhoogt de leesbaarheid.
 > Hoofdletters eisen te veel visuele aandacht op.
 
-### 9. Gebruik voorgedefinieerde type namen (C# aliases) zoals `int`, `float`, `string` voor declaraties.<br />Gebruik .NET Framework namen zoals `Int32`, `Single`, `String` wanneer je de statische members van dat type aanroept zoals `Int32.TryParse` of `String.Join`.
+### 9. Gebruik voorgedefinieerde type namen (C# aliases) zoals `int`, `float`, `string` voor declaraties.
 
 ```csharp
 // Correct
 string firstName;
 int lastIndex;
 bool isSaved;
-string commaSeparatedNames = String.Join(", ", names);
-int index = Int32.Parse(input);
 // Fout
 String firstName;
 Int32 lastIndex;
 Boolean isSaved;
-string commaSeparatedNames = string.Join(", ", names);
-int index = int.Parse(input);
 ```
 
 > **Waarom?**
